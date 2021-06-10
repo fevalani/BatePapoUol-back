@@ -1,7 +1,7 @@
 {
   "name": "batepapouol-back",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/fevalani/BatePapoUol-back/issues"
   },
-  "homepage": "https://github.com/fevalani/BatePapoUol-back#readme"
+  "homepage": "https://github.com/fevalani/BatePapoUol-back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "description": ""
 }
