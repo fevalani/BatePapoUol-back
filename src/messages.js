@@ -1,5 +1,3 @@
-let participants = [{ name: "João", lastStatus: 12313123 }];
-
 let messages = [
   {
     from: "João",
@@ -10,4 +8,4 @@ let messages = [
   },
 ];
 
-export default { participants, messages };
+export default messages;
