@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import postParticipants from "./postParticipants.js";
+import postMessages from "./postMessages.js";
 import participants from "./participants.js";
 import messages from "./messages.js";
 
@@ -14,6 +15,10 @@ app.post("/participants", (req, res) => {
 
 app.get("/participants", (req, res) => {
   res.send(participants);
+});
+
+app.post("/messages", (req, res) => {
+  postMessages(req, res);
 });
 
 app.listen(4000, () => {

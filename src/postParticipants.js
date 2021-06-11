@@ -3,7 +3,7 @@ import messages from "./messages.js";
 import dayjs from "dayjs";
 
 export default function postParticipants(req, res) {
-  if (req.body.name === "") {
+  if (req.body.name.trim().length === 0) {
     res.status(400).send("Nome vazio!");
     return;
   }
