@@ -1,7 +1,4 @@
-import messages from "./messages.js";
-import participants from "./participants.js";
-
-export default function getMessages(req, res) {
+export default function getMessages(req, res, participants, messages) {
   const objMessages = messages.filter(
     (item) =>
       item.to === req.headers.user ||

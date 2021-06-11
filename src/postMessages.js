@@ -1,8 +1,6 @@
-import participants from "./participants.js";
-import messages from "./messages.js";
 import dayjs from "dayjs";
 
-export default function postMessages(req, res) {
+export default function postMessages(req, res, participants, messages) {
   const objMessage = {
     ...req.body,
     from: req.headers.user,
@@ -21,7 +19,7 @@ export default function postMessages(req, res) {
     res.status(400).send("Tipo de mensagem não aceita");
     return;
   } else if (participants.map((item) => item.name).includes(req.headers.user)) {
-    res.status(200);
+    res.status(200).send();
     messages.push(objMessage);
     return;
   } else {

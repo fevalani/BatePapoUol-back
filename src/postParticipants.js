@@ -1,8 +1,6 @@
-import participants from "./participants.js";
-import messages from "./messages.js";
 import dayjs from "dayjs";
 
-export default function postParticipants(req, res) {
+export default function postParticipants(req, res, participants, messages) {
   if (req.body.name.trim().length === 0) {
     res.status(400).send("Nome vazio!");
     return;
@@ -21,5 +19,5 @@ export default function postParticipants(req, res) {
   };
   participants.push(objUser);
   messages.push(objMessage);
-  res.status(200);
+  res.status(200).send();
 }
