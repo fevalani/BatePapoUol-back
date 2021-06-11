@@ -4,6 +4,7 @@ import postParticipants from "./postParticipants.js";
 import postMessages from "./postMessages.js";
 import participants from "./participants.js";
 import messages from "./messages.js";
+import getMessages from "./getMessages.js";
 
 const app = express();
 app.use(cors());
@@ -19,6 +20,10 @@ app.get("/participants", (req, res) => {
 
 app.post("/messages", (req, res) => {
   postMessages(req, res);
+});
+
+app.get("/messages", (req, res) => {
+  getMessages(req, res);
 });
 
 app.listen(4000, () => {
