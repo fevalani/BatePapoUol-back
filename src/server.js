@@ -3,6 +3,7 @@ import cors from "cors";
 import postParticipants from "./postParticipants.js";
 import postMessages from "./postMessages.js";
 import getMessages from "./getMessages.js";
+import postStatus from "./postStatus.js";
 import dayjs from "dayjs";
 
 const app = express();
@@ -47,16 +48,7 @@ app.get("/messages", (req, res) => {
 });
 
 app.post("/status", (req, res) => {
-  const user = participants.find((item) => item.name === req.headers.user);
-  const index = participants.findIndex(
-    (item) => item.name === req.headers.user
-  );
-  if (!user) {
-    res.status(400).send();
-  } else {
-    participants[index].lastStatus = Date.now();
-    res.status(200).send();
-  }
+  postStatus(req, res, participants, messages);
 });
 
 app.listen(4000, () => {
